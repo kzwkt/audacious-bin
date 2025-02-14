@@ -27,6 +27,8 @@ jobs:
               ./configure --disable-qt --enable-gtk --prefix=$pw/pkg
               make install
               zip -r aud.zip pkg/
+              upload=$(realpath aud.zip)
+              echo "FILE1=${upload}" >> $GITHUB_ENV
               
               # building plugins need audacious installed so two configure
               
@@ -41,13 +43,15 @@ jobs:
               make
               make install
               zip -r aud-plugins.zip pkg/
+              upload=$(realpath aud-plugins.zip)
+              echo "FILE2=${upload}" >> $GITHUB_ENV
               
       - name: Create GitHub Release and Upload ZIP
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.run_id }}
           files: |
-            $pw/audacious/aud.zip
-            $pww/audacious-plugins/aud-plugins.zip
+            ${{ env.FILE1 }}
+            ${{ env.FILE2 }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
