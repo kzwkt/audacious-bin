@@ -31,7 +31,7 @@ jobs:
               # building plugins need audacious installed so two configure
               
               cd ..
-              sudo apt install -y libxml2-dev libflac-dev libvorbis-dev libogg-dev libmpg123-dev libwavpack-dev libavcodec-dev libavformat-dev libavutil-dev libpipewire-0.3-dev libspa-0.2-dev libneon27-dev
+              apt install -y libxml2-dev libflac-dev libvorbis-dev libogg-dev libmpg123-dev libwavpack-dev libavcodec-dev libavformat-dev libavutil-dev libpipewire-0.3-dev libspa-0.2-dev libneon27-dev
               git clone --branch master-gtk3 https://github.com/audacious-media-player/audacious-plugins.git --depth=1
               cd audacious-plugins
               pww=$(realpath .)
