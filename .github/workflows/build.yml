@@ -19,7 +19,7 @@ jobs:
               git clone --branch master-gtk3 https://github.com/audacious-media-player/audacious.git --depth=1
               cd audacious
               ./autogen.sh
-              mkdir $pkg
+              mkdir pkg
               ./configure --disable-qt --enable-gtk  
               make
               make install
