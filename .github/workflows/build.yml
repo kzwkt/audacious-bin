@@ -42,15 +42,12 @@ jobs:
               make install
               zip -r aud-plugins.zip pkg/
               
-              
-              
-        
       - name: Create GitHub Release and Upload ZIP
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.run_id }}
           files: |
-            ${{ github.workspace }}/audacious/aud.zip
-            ${{ github.workspace }}/audacious-plugins/aud-plugins.zip
+            $pw/audacious/aud.zip
+            $pww/audacious-plugins/aud-plugins.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
