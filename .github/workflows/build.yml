@@ -23,7 +23,7 @@ jobs:
               ./configure --disable-qt --enable-gtk  
               make
               make install
-              ./configure --disable-qt --enable-gtk --prefix=$pwd/pkg
+              ./configure --disable-qt --enable-gtk --prefix=$PWD/pkg
               make install
               zip -r aud.zip pkg/
               upload=$(realpath aud.zip)
@@ -37,7 +37,7 @@ jobs:
               cd audacious-plugins
               mkdir pkg
               ./autogen.sh
-              ./configure --disable-qt --enable-gtk  --prefix=$pwd/pkg
+              ./configure --disable-qt --enable-gtk  --prefix=$PWD/pkg
               make
               make install
               zip -r aud-plugins.zip pkg/
