@@ -36,6 +36,7 @@ jobs:
               cd audacious-plugins
               pww=$(realpath .)
               mkdir $pww/pkg
+              ./autogen.sh
               ./configure --disable-qt --enable-gtk  --prefix=$pw/pkg
               make
               make install
