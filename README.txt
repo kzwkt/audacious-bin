@@ -1,4 +1,6 @@
 # audacious-bin
+https://github.com/audacious-media-player/audacious
+https://github.com/audacious-media-player/audacious-plugins
 
 how to run
 extract both zip
