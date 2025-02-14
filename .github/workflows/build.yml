@@ -32,15 +32,13 @@ jobs:
               # building plugins need audacious installed so two configure
               
               cd ..
-              apt install -y libxml2-dev libflac-dev libvorbis-dev libogg-dev libmpg123-dev libwavpack-dev libavcodec-dev libavformat-dev libavutil-dev libpipewire-0.3-dev libspa-0.2-dev libneon27-dev
+              apt install -y meson libxml2-dev libflac-dev libvorbis-dev libogg-dev libmpg123-dev libwavpack-dev libavcodec-dev libavformat-dev libavutil-dev libpipewire-0.3-dev libspa-0.2-dev libneon27-dev
               git clone --branch master-gtk3 https://github.com/audacious-media-player/audacious-plugins.git --depth=1
               cd audacious-plugins
-              mkdir pkg
-              ./autogen.sh
-              ./configure --disable-qt --enable-gtk  --prefix=$PWD/pkg
-              make
-              make install
-              zip -r aud-plugins.zip pkg/
+              meson build -Dqt=false
+              meson compile -C build
+               meson install -C build --destdir pkg
+              zip -r aud-plugins.zip build/pkg/
               upload=$(realpath aud-plugins.zip)
               echo "FILE2=${upload}" >> $GITHUB_ENV
               
