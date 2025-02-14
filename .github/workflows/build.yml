@@ -19,12 +19,11 @@ jobs:
               git clone --branch master-gtk3 https://github.com/audacious-media-player/audacious.git --depth=1
               cd audacious
               ./autogen.sh
-               pw=$(realpath .)
-              mkdir $pw/pkg
+              mkdir $pkg
               ./configure --disable-qt --enable-gtk  
               make
               make install
-              ./configure --disable-qt --enable-gtk --prefix=$pw/pkg
+              ./configure --disable-qt --enable-gtk --prefix=$pwd/pkg
               make install
               zip -r aud.zip pkg/
               upload=$(realpath aud.zip)
@@ -36,10 +35,9 @@ jobs:
               apt install -y libxml2-dev libflac-dev libvorbis-dev libogg-dev libmpg123-dev libwavpack-dev libavcodec-dev libavformat-dev libavutil-dev libpipewire-0.3-dev libspa-0.2-dev libneon27-dev
               git clone --branch master-gtk3 https://github.com/audacious-media-player/audacious-plugins.git --depth=1
               cd audacious-plugins
-              pww=$(realpath .)
-              mkdir $pww/pkg
+              mkdir pkg
               ./autogen.sh
-              ./configure --disable-qt --enable-gtk  --prefix=$pw/pkg
+              ./configure --disable-qt --enable-gtk  --prefix=$pwd/pkg
               make
               make install
               zip -r aud-plugins.zip pkg/
