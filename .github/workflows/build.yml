@@ -32,7 +32,7 @@ jobs:
               # building plugins need audacious installed so two configure
               
               cd ..
-              apt install -y meson libxml2-dev libjson-glib-dev libflac-dev libvorbis-dev libopusfile-dev libogg-dev libmpg123-dev libwavpack-dev libavcodec-dev libavformat-dev libavutil-dev libpipewire-0.3-dev libspa-0.2-dev libneon27-dev
+              apt install -y meson libxml2-dev libjson-glib-dev libflac-dev libvorbis-dev libasound2-dev  libopusfile-dev libogg-dev libmpg123-dev libwavpack-dev libavcodec-dev libavformat-dev libavutil-dev libpipewire-0.3-dev libspa-0.2-dev libneon27-dev
               git clone  https://github.com/audacious-media-player/audacious-plugins.git --depth=1
               cd audacious-plugins
               meson build -Dqt=false
