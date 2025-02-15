@@ -18,3 +18,4 @@ export export LD_LIBRARY_PATH=/home/k/.local/lib:$LD_LIBRARY_PATH
 ~/.local/bin/audacious
 
 
+gtk only build with least dependecies possible
