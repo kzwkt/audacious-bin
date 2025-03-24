@@ -15,7 +15,7 @@ jobs:
 
       - name: clone audacious repo
         run: |
-              apt-get update && apt-get install -y  gcc autoconf automake gettext libtool cmake pkg-config  libgtk-3-dev  git locales g++ zip
+              apt-get update && apt-get install -y  gcc autoconf glib-devel libcurl-devel automake gettext libtool cmake pkg-config  libgtk-3-dev  git locales g++ zip
               git clone https://github.com/audacious-media-player/audacious.git --depth=1
               cd audacious
               ./autogen.sh
