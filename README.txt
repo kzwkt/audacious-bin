@@ -26,6 +26,9 @@ sudo mv -r build/pkg/usr/local/share/ /usr/local/lib/
 
 https://archive.org/details/winampskins
 
+for compressed skin wsz install unzip
+sudo apt install unzip -y
+
 
 
 gtk only build with least dependecies possible
