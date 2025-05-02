@@ -2,7 +2,7 @@ name: audacious gtk build
 on:
   push:
     paths:
-      - '.github/workflows/build.yml' 
+      - '.github/workflows/make.yml' 
 
 jobs:
   debian-container:
