@@ -28,6 +28,9 @@ https://archive.org/details/winampskins
 move  skins to ~/.local/share/audacious/Skins/
 mv ~/Downloads/*.wsz ~/.local/share/audacious/Skins/
 
+TIP: ctrl+d to make 2x classic winamp skin
+
+
 gtk only build with least dependecies possible
 
 cat .bin/aud
