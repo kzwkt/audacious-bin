@@ -24,12 +24,12 @@ extract aud-plugins.zip
 sudo mv -r build/pkg/usr/local/lib/audacious/ /usr/local/lib/
 sudo mv -r build/pkg/usr/local/share/ /usr/local/lib/
 
-https://archive.org/details/winampskins
 
-for compressed skin wsz install unzip
+for compressed winamp2 skin wsz install unzip
 sudo apt install unzip -y
-
-
+https://archive.org/details/winampskins
+move  skins to ~/.local/share/audacious/Skins/
+mv ~/Downloads/*.wsz ~/.local/share/audacious/Skins/
 
 gtk only build with least dependecies possible
 
