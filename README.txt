@@ -16,7 +16,7 @@ edit the audacious.desktop to use aud in exec field
 move pkg/lib/ to ~/.local/lib dirs for lib and share 
 
 cat .bin/aud
-export export LD_LIBRARY_PATH=/home/k/.local/lib:$LD_LIBRARY_PATH
+export export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 audacious "$@"
 
 it wont run without plugins
