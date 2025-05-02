@@ -2,7 +2,7 @@ name: audacious gtk build
 on:
   push:
     paths:
-      - '.github/workflows/make.yml' 
+      - 'builder' 
 
 jobs:
   debian-container:
@@ -32,7 +32,6 @@ jobs:
               # building plugins need audacious installed so two configure
               
               cd ..
-              apt install -y 
               git clone  https://github.com/audacious-media-player/audacious-plugins.git --depth=1
               cd audacious-plugins
               meson build -Dqt=false
