@@ -26,7 +26,7 @@ jobs:
               ./configure --disable-qt --enable-gtk --prefix=$PWD/pkg
               make install 
               strip pkg/bin/*
-              strip pkg/lib/*
+              strip pkg/lib/*.so
               zip -r aud.zip pkg/
               upload=$(realpath aud.zip)
               echo "FILE1=${upload}" >> $GITHUB_ENV
