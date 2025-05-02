@@ -9,19 +9,16 @@ mv  pkg/bin/audtool ~/.bin/
 mv  pkg/bin/audacious ~/.bin/
 mv pkg/share/icons/hicolor/scalable/apps/audacious.svg ~/.local/share/icons/
 mv pkg/share/applications/audacious.desktop ~/.local/share/applications
-
 edit the audacious.desktop to use aud in exec field
+move pkg/lib/ to ~/.local/lib/audacious dirs for lib 
+mv pkg/lib/ ~/.local/lib/audacious
 
-
-move pkg/lib/ to ~/.local/lib dirs for lib and share 
-
-cat .bin/aud
-export export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
-audacious "$@"
 
 it wont run without plugins
 extract aud-plugins.zip
 sudo mv -r build/pkg/usr/local/lib/audacious/ /usr/local/lib/
+
+for winamp skins and localization , you can also put skins in ~/.local/share/audacious/Skins/
 sudo mv -r build/pkg/usr/local/share/ /usr/local/lib/
 
 
@@ -33,3 +30,12 @@ mv ~/Downloads/*.wsz ~/.local/share/audacious/Skins/
 
 gtk only build with least dependecies possible
 
+cat .bin/aud
+export export LD_LIBRARY_PATH=$HOME/.local/lib/audacious:$LD_LIBRARY_PATH
+audacious "$@"
+
+some plugins need libs like :
+audacious/Transport/neon.so  libneon-gnutls.so.27
+audacious/Input/wavpack.so   libwavpack.so.1
+audacious/Input/opus.so      libopusfile.so.0
+non fatal error 
